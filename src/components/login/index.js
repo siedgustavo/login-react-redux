@@ -24,7 +24,7 @@ const Login = (props) => {
           onChange={props.onChangePassword}
           value={props.password}
         />
-        <button onClick={props.handleLogin} className={styles.button}>
+        <button onClick={() => props.handleLogin(props.email, props.password)} className={styles.button}>
           Login
           </button>
         {props.message && (
