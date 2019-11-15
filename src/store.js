@@ -93,7 +93,7 @@ export const handleLogin = (email, password) => {
           payload: data,
         })
       }
-      dispatch({
+      return dispatch({
         type: "LOGIN_SUCCESS",
         payload: data,
       })
