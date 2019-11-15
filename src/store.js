@@ -76,7 +76,7 @@ export const handleLogin = (email, password) => {
       type: "LOGIN_PENDING"
     })
 
-    fetch("http://localhost:4000/login", {
+    return fetch("http://localhost:4000/login", {
       baseURL: "localhost:4000",
       timeout: 25000,
       method: "POST",
@@ -88,7 +88,7 @@ export const handleLogin = (email, password) => {
     .then(a => a.json())
     .then((data) => {
       if(!data.success){
-        dispatch({
+        return dispatch({
           type: "LOGIN_ERROR",
           payload: data,
         })
@@ -99,7 +99,7 @@ export const handleLogin = (email, password) => {
       })
       console.log("Termino la promesa")
     }).catch((error) => {
-      dispatch({
+      return dispatch({
         type: "LOGIN_ERROR",
         payload: error,
       })
