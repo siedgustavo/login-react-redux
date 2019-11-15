@@ -76,8 +76,8 @@ export const handleLogin = (email, password) => {
       type: "LOGIN_PENDING"
     })
 
-    return fetch("http://localhost:4000/login", {
-      baseURL: "localhost:4000",
+    return fetch("https://gsied-trabajo-mcga-server.herokuapp.com/login", {
+      baseURL: "gsied-trabajo-mcga-server.herokuapp.com",
       timeout: 25000,
       method: "POST",
       headers: {
